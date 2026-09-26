@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nishant Kumar - RO and Water Purifier Service, Repair and Sales in Kahalgaon, Bhagalpur (NTPC)." />
+  <title>Nishant Kumar | RO & Water Purifier Service</title>
+  <style>
+    :root{
+      --primary:#087f8c;
+      --primary-dark:#05636d;
+      --light:#f3fbfc;
+      --dark:#12343b;
+      --muted:#5e7479;
+      --white:#fff;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--dark);
+      background:#fff;
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1100px,92%);margin:auto}
+
+    header{
+      position:sticky;top:0;z-index:10;
+      background:rgba(255,255,255,.96);
+      border-bottom:1px solid #e8eff0;
+      backdrop-filter:blur(8px);
+    }
+    nav{
+      min-height:70px;display:flex;align-items:center;
+      justify-content:space-between;gap:20px;
+    }
+    .logo{font-size:22px;font-weight:800;color:var(--primary)}
+    .logo span{display:block;font-size:11px;color:var(--muted);font-weight:500}
+    .nav-links{display:flex;gap:24px;list-style:none;font-size:14px;font-weight:600}
+    .nav-links a:hover{color:var(--primary)}
+
+    .hero{
+      background:linear-gradient(135deg,#e9fafb 0%,#fff 55%,#eef8ff 100%);
+      padding:85px 0 70px;
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:1.15fr .85fr;
+      align-items:center;gap:45px;
+    }
+    .badge{
+      display:inline-block;background:#d9f5f7;color:var(--primary-dark);
+      padding:7px 13px;border-radius:50px;font-size:13px;font-weight:700;
+      margin-bottom:18px;
+    }
+    h1{font-size:clamp(38px,6vw,64px);line-height:1.05;margin-bottom:18px}
+    h1 span{color:var(--primary)}
+    .hero p{font-size:18px;color:var(--muted);max-width:620px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{
+      display:inline-block;padding:13px 20px;border-radius:10px;
+      font-weight:700;font-size:15px;transition:.2s;
+    }
+    .btn-primary{background:var(--primary);color:white}
+    .btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px)}
+    .btn-outline{border:1px solid #b8cdd0;color:var(--dark);background:#fff}
+    .btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+
+    .water-card{
+      min-height:350px;border-radius:28px;background:white;
+      box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;
+      position:relative;overflow:hidden;
+    }
+    .water-card:before{
+      content:"";position:absolute;width:260px;height:260px;border-radius:50%;
+      background:#dff7fa;top:-90px;right:-80px;
+    }
+    .purifier{
+      position:relative;width:150px;height:235px;border-radius:18px 18px 28px 28px;
+      background:linear-gradient(90deg,#eef4f5,#fff,#dbe8ea);
+      border:1px solid #c8d9dc;box-shadow:0 18px 30px rgba(0,0,0,.12);
+    }
+    .purifier:after{
+      content:"PURE WATER";position:absolute;top:35px;left:18px;right:18px;
+      text-align:center;color:var(--primary);font-size:12px;font-weight:800;
+    }
+    .tap{position:absolute;width:52px;height:10px;background:#839da2;right:-31px;bottom:54px;border-radius:8px}
+    .tap:after{content:"";position:absolute;width:7px;height:28px;background:#839da2;right:0;top:5px;border-radius:0 0 6px 6px}
+    .drop{position:absolute;bottom:20px;right:-2px;color:#4bb7c2;font-size:22px}
+
+    section{padding:75px 0}
+    .section-head{text-align:center;max-width:650px;margin:0 auto 40px}
+    .section-head h2{font-size:34px;margin-bottom:9px}
+    .section-head p{color:var(--muted)}
+    .cards{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+    }
+    .card{
+      padding:27px;border:1px solid #e6eeee;border-radius:18px;
+      background:#fff;box-shadow:0 5px 20px rgba(0,0,0,.04);
+    }
+    .icon{
+      width:48px;height:48px;border-radius:13px;background:#e5f8fa;
+      display:grid;place-items:center;font-size:24px;margin-bottom:16px;
+    }
+    .card h3{font-size:19px;margin-bottom:8px}
+    .card p{color:var(--muted);font-size:14px}
+
+
+    .products{background:#f8fcfc}
+    .product-card{
+      padding:25px;border:1px solid #e2eeee;border-radius:18px;
+      background:#fff;box-shadow:0 5px 20px rgba(0,0,0,.04);
+      display:flex;flex-direction:column;
+    }
+    .product-image{
+      height:145px;border-radius:14px;background:linear-gradient(135deg,#e5f8fa,#f5fbff);
+      display:grid;place-items:center;font-size:58px;margin-bottom:18px;
+    }
+    .product-card h3{font-size:18px;margin-bottom:7px}
+    .product-card p{font-size:14px;color:var(--muted);flex:1}
+    .product-tag{
+      display:inline-block;width:max-content;margin:12px 0;
+      padding:5px 9px;border-radius:20px;background:#e7f7f8;
+      color:var(--primary-dark);font-size:11px;font-weight:700;
+    }
+    .product-card .btn{margin-top:15px;text-align:center;width:100%}
+    .note{
+      text-align:center;color:var(--muted);font-size:13px;margin-top:22px
+    }
+
+    .about{background:var(--light)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+    .about h2{font-size:34px;margin-bottom:15px}
+    .about p{color:var(--muted);margin-bottom:14px}
+    .checklist{list-style:none;display:grid;gap:10px;margin-top:18px}
+    .checklist li:before{content:"✓";color:var(--primary);font-weight:800;margin-right:10px}
+    .info-box{
+      background:#fff;border-radius:22px;padding:30px;box-shadow:var(--shadow);
+    }
+    .info-row{padding:15px 0;border-bottom:1px solid #edf1f2}
+    .info-row:last-child{border-bottom:0}
+    .info-row small{display:block;color:var(--muted);font-size:12px}
+    .info-row strong{font-size:17px}
+
+    .cta{
+      background:linear-gradient(135deg,var(--primary),#0b6570);
+      color:white;text-align:center;border-radius:28px;padding:55px 25px;
+    }
+    .cta p{opacity:.9;margin:10px auto 22px;max-width:600px}
+    .cta .btn{background:white;color:var(--primary-dark)}
+
+    footer{background:#102d33;color:#d6e4e6;padding:30px 0}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    footer small{color:#9eb5b9}
+
+    @media(max-width:800px){
+      .nav-links{display:none}
+      .hero-grid,.about-grid{grid-template-columns:1fr}
+      .hero{padding:60px 0}
+      .water-card{min-height:280px}
+      .cards{grid-template-columns:1fr}
+      section{padding:58px 0}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="logo" href="#home">Nishant Kumar<span>RO & Water Purifier Service</span></a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">Serving Kahalgaon • Bhagalpur • NTPC</div>
+        <h1>Clean Water.<br><span>Reliable Service.</span></h1>
+        <p>
+          RO and water purifier servicing, repair, maintenance and machine sales
+          with convenient doorstep service.
+        </p>
+        <div class="buttons">
+          <!-- Add your phone number inside the href when ready -->
+          <a class="btn btn-primary" href="#contact">Book a Service</a>
+          <a class="btn btn-outline" href="#services">View Services</a>
+        </div>
+      </div>
+
+      <div class="water-card" aria-label="Water purifier illustration">
+        <div class="purifier"><div class="tap"></div><div class="drop">💧</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>Our Services</h2>
+        <p>Practical RO and water purifier services for homes and local customers.</p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="icon">🔧</div>
+          <h3>RO Servicing</h3>
+          <p>Regular servicing and maintenance to keep your water purifier working properly.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🛠️</div>
+          <h3>RO Repair</h3>
+          <p>Help with common water purifier problems and service requirements.</p>
+        </div>
+        <div class="card">
+          <div class="icon">💧</div>
+          <h3>Filter Replacement</h3>
+          <p>Replacement of filters, membranes and other service parts as required.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🏠</div>
+          <h3>Doorstep Service</h3>
+          <p>Convenient service at your home in the local service area.</p>
+        </div>
+        <div class="card">
+          <div class="icon">⚙️</div>
+          <h3>Installation</h3>
+          <p>Water purifier installation and related setup support.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🛒</div>
+          <h3>Machine Sales</h3>
+          <p>Water purifier machines available for customers. Ask for current models and prices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-head">
+        <h2>KENT Products & Filters</h2>
+        <p>Genuine KENT spare parts and water purifier products can be enquired about through us.</p>
+      </div>
+
+      <div class="cards">
+        <div class="product-card">
+          <div class="product-image">💧</div>
+          <span class="product-tag">KENT FILTER</span>
+          <h3>Inline Sediment Filter 8"</h3>
+          <p>Replacement sediment filter for compatible KENT RO systems.</p>
+          <a class="btn btn-primary" href="#contact">Order / Enquire</a>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">🫧</div>
+          <span class="product-tag">KENT FILTER</span>
+          <h3>Inline Carbon Filter 8"</h3>
+          <p>Replacement carbon filter for compatible KENT RO systems.</p>
+          <a class="btn btn-primary" href="#contact">Order / Enquire</a>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">🔵</div>
+          <span class="product-tag">KENT SPARE</span>
+          <h3>RO Membrane</h3>
+          <p>RO membrane replacement; model compatibility should be checked before purchase.</p>
+          <a class="btn btn-primary" href="#contact">Order / Enquire</a>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">⚪</div>
+          <span class="product-tag">KENT FILTER</span>
+          <h3>Post Carbon Filter</h3>
+          <p>Post-carbon replacement filter for compatible KENT water purifiers.</p>
+          <a class="btn btn-primary" href="#contact">Order / Enquire</a>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">🛡️</div>
+          <span class="product-tag">KENT PRODUCT</span>
+          <h3>Self-Cleaning Sediment Filter</h3>
+          <p>Reusable sediment protection filter designed for installation before an RO purifier.</p>
+          <a class="btn btn-primary" href="#contact">Order / Enquire</a>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">🚰</div>
+          <span class="product-tag">WATER PURIFIER</span>
+          <h3>KENT RO Water Purifiers</h3>
+          <p>Ask us about available KENT models, prices and installation/service options.</p>
+          <a class="btn btn-primary" href="#contact">Buy / Enquire</a>
+        </div>
+      </div>
+
+      <p class="note">Product availability and compatibility may vary by KENT purifier model. Please confirm your model before ordering.</p>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div>
+        <h2>About Nishant Kumar</h2>
+        <p>
+          We provide local RO and water purifier service, repair and maintenance
+          for customers around Kahalgaon, Bhagalpur and NTPC.
+        </p>
+        <p>
+          Our focus is simple: convenient doorstep service and dependable support
+          for your water purifier.
+        </p>
+        <ul class="checklist">
+          <li>Doorstep service</li>
+          <li>Repair & maintenance</li>
+          <li>Filter and membrane service</li>
+          <li>Water purifier machine sales</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <div class="info-row">
+          <small>Owner / Contact Person</small>
+          <strong>Nishant Kumar</strong>
+        </div>
+        <div class="info-row">
+          <small>Service Area</small>
+          <strong>Kahalgaon, Bhagalpur</strong>
+        </div>
+        <div class="info-row">
+          <small>Nearby Area</small>
+          <strong>NTPC</strong>
+        </div>
+        <div class="info-row">
+          <small>Phone / WhatsApp</small>
+          <strong>Coming soon</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="cta">
+        <h2>Service or Product Enquiry?</h2>
+        <p>Book RO servicing, ask for a repair, or enquire about KENT filters and water purifier machines.</p>
+        <!-- Replace # with tel:YOURNUMBER after adding the number -->
+        <a class="btn" href="#">Call / WhatsApp — Number Coming Soon</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>
+      <strong>Nishant Kumar</strong><br />
+      <small>RO & Water Purifier Service</small>
+    </div>
+    <small>© 2026 Nishant Kumar. All rights reserved.</small>
+  </div>
+</footer>
+
+</body>
+</html>
